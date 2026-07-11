@@ -353,4 +353,40 @@ body{
 
 padding-bottom:90px;
 
+}.daily-budget{
+
+margin-top:20px;
+
+}
+
+.daily-card{
+
+background:#1e293b;
+
+padding:20px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 0 20px rgba(0,0,0,.4);
+
+}
+
+.daily-card h1{
+
+font-size:40px;
+
+color:#22c55e;
+
+margin-bottom:10px;
+
+}
+
+.daily-card p{
+
+font-size:18px;
+
+color:#cbd5e1;
+
 }
