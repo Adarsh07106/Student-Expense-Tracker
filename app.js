@@ -183,6 +183,11 @@ function formatMoney(value){
 
 function updateDashboard(total){
     drawChart();
+    if(total>=BUDGET){
+
+alert("⚠️ Budget Limit Cross Ho Gaya!");
+
+    }
     totalExpense.innerHTML=formatMoney(total);
 
 totalEntries.innerHTML=expenses.length;
