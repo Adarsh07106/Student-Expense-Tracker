@@ -72,7 +72,10 @@ const remainingEl = document.getElementById("remaining");
 const progressEl = document.getElementById("progress");
     const todayExpense=document.getElementById("todayExpense");
 const expenseList = document.getElementById("expenseList");
-
+const homeBtn=document.getElementById("homeBtn");
+const historyBtn=document.getElementById("historyBtn");
+const chartBtn=document.getElementById("chartBtn");
+const summaryBtn=document.getElementById("summaryBtn");
 const dateInput = document.getElementById("date");
 const categoryInput = document.getElementById("category");
 const amountInput = document.getElementById("amount");
