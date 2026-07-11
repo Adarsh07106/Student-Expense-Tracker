@@ -1,4 +1,65 @@
-const BUDGET = 5000;
+let chart;
+
+function drawChart() {
+
+    const totals = {};
+
+    expenses.forEach(item => {
+
+        if (!totals[item.category]) {
+
+            totals[item.category] = 0;
+
+        }
+
+        totals[item.category] += item.amount;
+
+    });
+
+    const labels = Object.keys(totals);
+
+    const values = Object.values(totals);
+
+    const ctx = document.getElementById("pieChart");
+
+    if (!ctx) return;
+
+    if (chart) {
+
+        chart.destroy();
+
+    }
+
+    chart = new Chart(ctx, {
+
+        type: "doughnut",
+
+        data: {
+
+            labels: labels,
+
+            datasets: [{
+
+                data: values,
+
+                backgroundColor: [
+
+                    "#22c55e",
+                    "#3b82f6",
+                    "#f59e0b",
+                    "#ef4444",
+                    "#8b5cf6",
+                    "#06b6d4",
+                    "#84cc16",
+                    "#f97316",
+                    "#ec4899",
+                    "#64748b"
+
+                ]
+
+            }]
+
+       const BUDGET = 5000;
 
 let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
@@ -105,6 +166,7 @@ function formatMoney(value){
 }
 
 function updateDashboard(total){
+    drawChart();
 
     spentEl.innerText=formatMoney(total);
 
