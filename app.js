@@ -326,7 +326,30 @@ function downloadCSV() {
     a.download = "Expense_Report.csv";
 
     a.click();
+const remain = BUDGET - total;
 
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(c => {
+    c.classList.remove("green-card","yellow-card","red-card","blink");
+});
+
+if(remain >= 2500){
+
+    cards.forEach(c => c.classList.add("green-card"));
+
+}else if(remain >= 1000){
+
+    cards.forEach(c => c.classList.add("yellow-card"));
+
+}else{
+
+    cards.forEach(c => {
+        c.classList.add("red-card");
+        c.classList.add("blink");
+    });
+
+}
 }
 
 function clearAllExpenses() {
