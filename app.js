@@ -81,6 +81,8 @@ const categoryInput = document.getElementById("category");
 const amountInput = document.getElementById("amount");
 const noteInput = document.getElementById("note");
 const addBtn = document.getElementById("addBtn");
+    const dailyLimit=document.getElementById("dailyLimit");
+const budgetStatus=document.getElementById("budgetStatus");
 const monthFilter=document.getElementById("monthFilter");
 dateInput.valueAsDate = new Date();
 
