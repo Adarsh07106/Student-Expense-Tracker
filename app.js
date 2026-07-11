@@ -222,6 +222,26 @@ avg=total/expenses.length;
 }
 
 averageExpense.innerHTML=formatMoney(avg);
+    const today = getTodayExpense();
+
+dailyLimit.innerHTML = "₹167";
+
+if(today <= 167){
+
+    budgetStatus.innerHTML = "On Track ✅";
+    budgetStatus.style.color = "#22c55e";
+
+}else if(today <= 250){
+
+    budgetStatus.innerHTML = "Careful ⚠️";
+    budgetStatus.style.color = "#f59e0b";
+
+}else{
+
+    budgetStatus.innerHTML = "Overspent ❌";
+    budgetStatus.style.color = "#ef4444";
+
+}
 todayExpense.innerHTML=formatMoney(getTodayExpense());
     spentEl.innerText=formatMoney(total);
 
