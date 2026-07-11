@@ -116,39 +116,24 @@ function addExpense() {
     render();
 }
 
-function render() {
-
-    expenseList.innerHTML = "";
-
-    let total = 0;
-
- expenses
+expenses
 .filter(item=>{
 
-const q=searchExpense.value.toLowerCase();
+const q = searchExpense.value.toLowerCase();
 
-const matchSearch=
+const matchSearch =
 item.category.toLowerCase().includes(q) ||
 item.note.toLowerCase().includes(q);
 
-const month=item.date.split("-")[1];
+const month = item.date.split("-")[1];
 
-const matchMonth=
-monthFilter.value==="" ||
-month===monthFilter.value;
+const matchMonth =
+monthFilter.value === "" ||
+month === monthFilter.value;
 
 return matchSearch && matchMonth;
 
 })
-
-const q=searchExpense.value.toLowerCase();
-
-return item.category.toLowerCase().includes(q)
-
-|| item.note.toLowerCase().includes(q);
-
-})
-
 .forEach((item,index)=>{
 
         total += item.amount;
