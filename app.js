@@ -84,6 +84,7 @@ const addBtn = document.getElementById("addBtn");
     const dailyLimit=document.getElementById("dailyLimit");
 const budgetStatus=document.getElementById("budgetStatus");
 const monthFilter=document.getElementById("monthFilter");
+    const themeBtn=document.getElementById("themeBtn");
 dateInput.valueAsDate = new Date();
 
 addBtn.addEventListener("click", addExpense);
