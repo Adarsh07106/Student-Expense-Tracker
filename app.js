@@ -66,6 +66,95 @@ function render() {
     });
 
     spentEl.innerText = "₹" + total;
+    function deleteExpense(index){
+
+    if(!confirm("Delete this expense?")) return;
+
+    expenses.splice(index,1);
+
+    localStorage.setItem("expenses",JSON.stringify(expenses));
+
+    render();
+
+}
+
+function editExpense(index){
+
+    let item = expenses[index];
+
+    dateInput.value = item.date;
+
+    categoryInput.value = item.category;
+
+    amountInput.value = item.amount;
+
+    noteInput.value = item.note;
+
+    expenses.splice(index,1);
+
+    localStorage.setItem("expenses",JSON.stringify(expenses));
+
+    render();
+
+}
+
+function formatMoney(value){
+
+    return "₹"+Number(value).toLocaleString("en-IN");
+
+}
+
+function updateDashboard(total){
+
+    spentEl.innerText=formatMoney(total);
+
+    remainingEl.innerText=formatMoney(BUDGET-total);
+
+    let p=(total/BUDGET)*100;
+
+    if(p>100)p=100;
+
+    progressEl.style.width=p+"%";
+
+    if(p<60){
+
+        progressEl.style.background="#22c55e";
+
+    }else if(p<90){
+
+        progressEl.style.background="#f59e0b";
+
+    }else{
+
+        progressEl.style.background="#ef4444";
+
+    }
+
+}
+
+function render(){
+
+    expenseList.innerHTML="";
+
+    let total=0;
+
+    expenses.forEach((item,index)=>{
+
+        total+=item.amount;
+
+        expenseList.innerHTML+=`
+
+<tr>
+
+<td>${item.date}</td>
+
+<td>${item.category}</td>
+
+<td>${formatMoney(item.amount)}</td>
+
+<td>${item.note}</td>
+
+<td>
 
     remainingEl.innerText = "₹" + (BUDGET - total);
 
