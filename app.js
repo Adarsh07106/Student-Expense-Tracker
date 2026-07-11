@@ -78,7 +78,7 @@ const categoryInput = document.getElementById("category");
 const amountInput = document.getElementById("amount");
 const noteInput = document.getElementById("note");
 const addBtn = document.getElementById("addBtn");
-
+const monthFilter=document.getElementById("monthFilter");
 dateInput.valueAsDate = new Date();
 
 addBtn.addEventListener("click", addExpense);
@@ -118,6 +118,22 @@ function render() {
 
  expenses
 .filter(item=>{
+
+const q=searchExpense.value.toLowerCase();
+
+const matchSearch=
+item.category.toLowerCase().includes(q) ||
+item.note.toLowerCase().includes(q);
+
+const month=item.date.split("-")[1];
+
+const matchMonth=
+monthFilter.value==="" ||
+month===monthFilter.value;
+
+return matchSearch && matchMonth;
+
+})
 
 const q=searchExpense.value.toLowerCase();
 
@@ -354,3 +370,4 @@ behavior:"smooth"
 amountInput.focus();
 
 });
+monthFilter.addEventListener("change",render);
