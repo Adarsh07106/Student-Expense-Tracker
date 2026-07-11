@@ -167,3 +167,80 @@ function render(){
 }
 
 render();
+function downloadCSV() {
+
+    let csv = "Date,Category,Amount,Note\n";
+
+    expenses.forEach(item => {
+
+        csv += `${item.date},${item.category},${item.amount},${item.note}\n`;
+
+    });
+
+    const blob = new Blob([csv], { type: "text/csv" });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+
+    a.href = url;
+
+    a.download = "Expense_Report.csv";
+
+    a.click();
+
+}
+
+function clearAllExpenses() {
+
+    if (!confirm("Delete all expenses?")) return;
+
+    expenses = [];
+
+    localStorage.removeItem("expenses");
+
+    render();
+
+}
+
+function totalByCategory(category) {
+
+    let total = 0;
+
+    expenses.forEach(item => {
+
+        if (item.category === category) {
+
+            total += item.amount;
+
+        }
+
+    });
+
+    return total;
+
+}
+
+function getTodayExpense() {
+
+    let today = new Date().toISOString().split("T")[0];
+
+    let total = 0;
+
+    expenses.forEach(item => {
+
+        if (item.date === today) {
+
+            total += item.amount;
+
+        }
+
+    });
+
+    return total;
+
+}
+
+console.log("Today's Expense : ₹" + getTodayExpense());
+
+render();
