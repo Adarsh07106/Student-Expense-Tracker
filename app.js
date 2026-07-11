@@ -438,3 +438,24 @@ behavior:"smooth"
 });
 
 }
+let dark=true;
+
+themeBtn.onclick=()=>{
+
+if(dark){
+
+document.body.classList.add("light");
+
+themeBtn.innerHTML="☀️ Light Mode";
+
+}else{
+
+document.body.classList.remove("light");
+
+themeBtn.innerHTML="🌙 Dark Mode";
+
+}
+
+dark=!dark;
+
+};
