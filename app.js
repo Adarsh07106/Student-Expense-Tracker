@@ -15,7 +15,11 @@ function drawChart() {
         totals[item.category] += item.amount;
 
     });
+const totalExpense=document.getElementById("totalExpense");
 
+const averageExpense=document.getElementById("averageExpense");
+
+const totalEntries=document.getElementById("totalEntries");
     const labels = Object.keys(totals);
 
     const values = Object.values(totals);
