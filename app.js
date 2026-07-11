@@ -482,3 +482,30 @@ themeBtn.innerHTML="🌙 Dark Mode";
 dark=!dark;
 
 };
+function showToast(message,color="#22c55e"){
+
+    let toast=document.createElement("div");
+
+    toast.innerHTML=message;
+
+    toast.style.position="fixed";
+    toast.style.bottom="90px";
+    toast.style.left="50%";
+    toast.style.transform="translateX(-50%)";
+    toast.style.background=color;
+    toast.style.color="white";
+    toast.style.padding="14px 22px";
+    toast.style.borderRadius="12px";
+    toast.style.fontWeight="bold";
+    toast.style.boxShadow="0 10px 30px rgba(0,0,0,.35)";
+    toast.style.zIndex="9999";
+
+    document.body.appendChild(toast);
+
+    setTimeout(()=>{
+
+        toast.remove();
+
+    },2000);
+
+}
