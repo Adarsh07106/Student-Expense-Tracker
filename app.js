@@ -335,3 +335,4 @@ function getTodayExpense() {
 console.log("Today's Expense : ₹" + getTodayExpense());
 
 render();
+searchExpense.addEventListener("input",render);
