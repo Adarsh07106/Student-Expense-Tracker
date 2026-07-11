@@ -25,7 +25,7 @@ const totalEntries=document.getElementById("totalEntries");
     const values = Object.values(totals);
 
     const ctx = document.getElementById("pieChart");
-
+const searchExpense=document.getElementById("searchExpense");
     if (!ctx) return;
 
     if (chart) {
