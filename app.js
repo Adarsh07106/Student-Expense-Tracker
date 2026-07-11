@@ -23,7 +23,7 @@ const totalEntries=document.getElementById("totalEntries");
     const labels = Object.keys(totals);
 
     const values = Object.values(totals);
-
+const fab=document.getElementById("fab");
     const ctx = document.getElementById("pieChart");
 const searchExpense=document.getElementById("searchExpense");
     if (!ctx) return;
