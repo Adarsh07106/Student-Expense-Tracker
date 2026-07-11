@@ -336,3 +336,16 @@ console.log("Today's Expense : ₹" + getTodayExpense());
 
 render();
 searchExpense.addEventListener("input",render);
+fab.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:document.querySelector(".add-expense").offsetTop-20,
+
+behavior:"smooth"
+
+});
+
+amountInput.focus();
+
+});
