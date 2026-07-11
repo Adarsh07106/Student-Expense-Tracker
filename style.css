@@ -120,6 +120,43 @@ padding:20px;
 border-radius:18px;
 margin-bottom:20px;
 overflow:auto;
+  .history button{
+border:none;
+padding:8px 12px;
+margin:2px;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+}
+
+.history button:first-child{
+background:#3b82f6;
+color:white;
+}
+
+.history button:last-child{
+background:#ef4444;
+color:white;
+}
+
+.history button:hover{
+transform:scale(1.05);
+transition:.3s;
+}
+
+.chart{
+margin-top:20px;
+background:#1e293b;
+padding:20px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+#pieChart{
+max-width:350px;
+margin:auto;
+display:block;
+}
 }
 
 table{
