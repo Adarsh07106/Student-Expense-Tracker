@@ -116,7 +116,18 @@ function render() {
 
     let total = 0;
 
-    expenses.forEach((item, index) => {
+ expenses
+.filter(item=>{
+
+const q=searchExpense.value.toLowerCase();
+
+return item.category.toLowerCase().includes(q)
+
+|| item.note.toLowerCase().includes(q);
+
+})
+
+.forEach((item,index)=>{
 
         total += item.amount;
 
