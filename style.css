@@ -390,3 +390,28 @@ font-size:18px;
 color:#cbd5e1;
 
 }
+#themeBtn{
+margin-top:10px;
+padding:10px 18px;
+border:none;
+border-radius:10px;
+background:#22c55e;
+color:white;
+font-size:15px;
+cursor:pointer;
+}
+
+.light{
+background:#f8fafc !important;
+color:#111827 !important;
+}
+
+.light .card,
+.light .history,
+.light .chart,
+.light .summary-card,
+.light .daily-card,
+.light .add-expense{
+background:white !important;
+color:#111827 !important;
+}
