@@ -172,6 +172,19 @@ function formatMoney(value){
 
 function updateDashboard(total){
     drawChart();
+    totalExpense.innerHTML=formatMoney(total);
+
+totalEntries.innerHTML=expenses.length;
+
+let avg=0;
+
+if(expenses.length>0){
+
+avg=total/expenses.length;
+
+}
+
+averageExpense.innerHTML=formatMoney(avg);
 todayExpense.innerHTML=formatMoney(getTodayExpense());
     spentEl.innerText=formatMoney(total);
 
