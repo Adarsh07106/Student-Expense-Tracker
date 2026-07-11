@@ -66,6 +66,7 @@ let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 const spentEl = document.getElementById("spent");
 const remainingEl = document.getElementById("remaining");
 const progressEl = document.getElementById("progress");
+    const todayExpense=document.getElementById("todayExpense");
 const expenseList = document.getElementById("expenseList");
 
 const dateInput = document.getElementById("date");
@@ -167,7 +168,7 @@ function formatMoney(value){
 
 function updateDashboard(total){
     drawChart();
-
+todayExpense.innerHTML=formatMoney(getTodayExpense());
     spentEl.innerText=formatMoney(total);
 
     remainingEl.innerText=formatMoney(BUDGET-total);
